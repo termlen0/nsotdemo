@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Tracking state for network automation, using NSoT</title>
+<meta name="author" content="(Ajay Chenampara)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="./local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Tracking state for network automation, using NSoT</h1><h2 class="author">Ajay Chenampara</h2><p class="date">Created: 2017-02-18 Sat 14:48</p>
+</section>
+<section>
+<section id="slide-orgab2ab96">
+<h2 id="orgab2ab96">Questions to ponder regarding the 'state', for network devices</h2>
+<div class="outline-text-2" id="text-orgab2ab96">
+</div></section>
+<section id="slide-orgd3f9322">
+<h3 id="orgd3f9322">What is the "Source of Truth" for network devices ?</h3>
+</section>
+<section id="slide-org90cca12">
+<h3 id="org90cca12">What about version control ?</h3>
+</section>
+</section>
+<section>
+<section id="slide-org809fd40">
+<h2 id="org809fd40">So you have a playbook&#x2026;</h2>
+<div class="outline-text-2" id="text-org809fd40">
+</div></section>
+<section id="slide-org68b7e47">
+<h3 id="org68b7e47">Most of us still use a manual method to input variable data</h3>
+</section>
+<section id="slide-org9a77cc7">
+<h3 id="org9a77cc7">Iterables</h3>
+
+<div class="figure">
+<p><img src="http://termlen0.github.io/assets/iterables.png" alt="iterables.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgc3a1ef2">
+<h3 id="orgc3a1ef2">CRUD!</h3>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf437f0e">
+<h2 id="orgf437f0e">Demo</h2>
+<div class="outline-text-2" id="text-orgf437f0e">
+</div></section>
+<section id="slide-org9ea0354">
+<h3 id="org9ea0354">Scenario: IPSec connectivity as a service</h3>
+</section>
+<section id="slide-org4b5364c">
+<h3 id="org4b5364c">Statefully track: VLAN(s) Nos, Cryptomap Nos, Encryption domain</h3>
+<aside class="notes">
+<p>
+SLIDE 1: Network drawings, CMDB, Device config itself?
+SLIDE 2: If version controlled, then do you parse the entire config to
+generate new values?
+SLIDE 3: ..
+SLIDE 4: Manual - yaml file, jinja template etc
+SLIDE 5: Iterables
+SLIDE 6: &#x2026;
+SLIDE 7: Scenario
+SLIDE 8: What needs to be tracked for this
+</p>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: false,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
